@@ -52,15 +52,22 @@ html {
 
 /* HIDDEN ELEMENTS */
 .meme-picture {
-  display: none;
   align-self: center;
+
+  display: none;
+  opacity: 0;
+  transition: opacity 2s;
 }
 
-.hide {
-  display: none;
+.plus {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .cross {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 /* ACTIONS */
@@ -73,6 +80,7 @@ html {
 /* Accordion '+' icon appears */
 .container:hover .plus {
   display: block;
+  opacity: 1;
 }
 
 /* User moves cursor over meme */
@@ -81,13 +89,16 @@ html {
   cursor: pointer;
 }
 /* Meme picture appears */
-.section:hover .meme-picture {
+.section:hover > .meme-picture {
   display: block;
+
+  opacity: 1;
 }
 
 /* 'X' icon appears */
 .section:hover .cross {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 /* '+' icon disappears */
 .section:hover .plus {
