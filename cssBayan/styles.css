@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000000;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: #f5f5eb;
+}
+
+/* STYLES */
+.header {
+  margin-top: 2rem;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.container {
+  max-width: 90rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.meme-description {
+  display: flex;
+  justify-content: space-between;
+}
+.section {
+  color: #0059d9;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  border-top: solid 3px #d9dfe4;
+}
+
+/* HIDDEN ELEMENTS */
+.meme-picture {
+  align-self: center;
+
+  display: none;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.plus {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cross {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* ACTIONS */
+
+/* User moves cursor over the accordion (hover) */
+/* Accordion color becomes black */
+.container:hover .section {
+  color: #000000;
+}
+/* Accordion '+' icon appears */
+.container:hover .plus {
+  display: block;
+  opacity: 1;
+}
+
+/* User moves cursor over meme */
+/* Cursor appears */
+.section:hover {
+  cursor: pointer;
+}
+/* Meme picture appears */
+.section:hover > .meme-picture {
+  display: block;
+
+  opacity: 1;
+}
+
+/* 'X' icon appears */
+.section:hover .cross {
+  visibility: visible;
+  opacity: 1;
+}
+/* '+' icon disappears */
+.section:hover .plus {
+  display: none;
+}
+
+/* When click on meme changes meme description color and back when mouse released*/
+.section:active > .meme-description {
+  color: #0059d9;
+}
+
+/* Mobile styles */
+@media (min-width: 320px) and (max-width: 568px) {
+  html {
+    font-size: 0.35rem;
+  }
+
+  img {
+    max-width: 30rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 820px) and (max-width: 1180px) {
+  html {
+    font-size: 0.8rem;
+  }
+
+  img {
+    max-width: 40rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 900px;
+  }
+}
