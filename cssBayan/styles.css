@@ -84,6 +84,7 @@ html {
 .section:hover .meme-picture {
   display: block;
 }
+
 /* 'X' icon appears */
 .section:hover .cross {
   display: block;
@@ -96,4 +97,33 @@ html {
 /* When click on meme changes meme description color and back when mouse released*/
 .section:active > .meme-description {
   color: #0059d9;
+}
+
+/* Mobile styles */
+@media (min-width: 320px) and (max-width: 568px) {
+  html {
+    font-size: 0.35rem;
+  }
+
+  img {
+    max-width: 30rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 820px) and (max-width: 1180px) {
+  html {
+    font-size: 0.8rem;
+  }
+
+  img {
+    max-width: 40rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 900px;
+  }
 }
